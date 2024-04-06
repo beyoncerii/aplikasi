@@ -29,8 +29,6 @@ class CreateBooksTable extends Migration
      * @return void
      */
 
-        @return void
-
     public function down(): void
     {
         Schema::dropIfExists('books');
