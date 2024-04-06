@@ -25,6 +25,7 @@ class BookFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'synopsis' => $this->faker->paragraphs(2, true),
+            'author_id' => $this->faker->numberBetween(1, 30),
             'price' => $this->faker->randomFloat(2, 10, 1000),
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -10,7 +11,7 @@ class BookController extends Controller
 
     //
     public function index(){
-        $books = Book::select(['id', 'title', 'price'])->paginate(10);
+        $books = Book::paginate(10);
 
         return view('books.listing', ['books' => $books]);
 
@@ -52,6 +53,11 @@ class BookController extends Controller
         $book->save();
 
         return back()->with('success', 'Book updated successfully!');
+    }
+
+    public function authors(){
+        $authors = Author::all();
+        return view('books.authors', ['authors' => $authors]);
     }
 
     public function create()

@@ -49,6 +49,9 @@ Route::get('/books', [BookController::class, 'index'])->name('book-listing');
 //store data baru
 Route::post('/book', [BookController::class, 'store'])->name('book-store');
 
+//keluarkan author dengan buku
+Route::get('/authors', [BookController::class, 'authors'])->name('author-listing');
+
 
 // redirect
 Route::redirect('/seri', '/');

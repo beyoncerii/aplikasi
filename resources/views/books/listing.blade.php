@@ -32,7 +32,7 @@
                                 {{$book->title}}
                             </a>
                         </td>
-                        <td>John Doe</td>
+                        <td>{{$book->author->name}}</td>
                         <td>{{$book->price}}</td>
                         <td>
                             <a class="btn btn-sm btn-primary" href={{route ('book-edit', $book->id)}}>EDIT</a>
