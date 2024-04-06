@@ -36,8 +36,10 @@
                             <a class="btn btn-sm btn-primary" href={{route ('book-edit', $book->id)}}>EDIT</a>
 
                             <form action="{{ route('book-destroy', $book->id) }}" method="POST" class="d-inline" onsubmit="return confirm ('Are you sure you want to delete book titled {{$book->title}}')">
+
                                 @method('delete')
                                 @csrf
+
                                 <button class="btn btn-danger btn-sm" type="submit">DELETE</button>
                         </td>
                     </tr>
